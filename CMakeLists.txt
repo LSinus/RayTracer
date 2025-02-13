@@ -4,7 +4,16 @@ project(RayTracer)
 set(CMAKE_CXX_STANDARD 17)
 
 find_package(OpenGL REQUIRED)
-find_package(glfw3 REQUIRED)
+find_package(glfw3 QUIET)
+
+if(NOT glfw3_FOUND)
+    FetchContent_Declare(
+            glfw
+            GIT_REPOSITORY https://github.com/glfw/glfw.git
+            GIT_TAG 3.3.8
+    )
+    FetchContent_MakeAvailable(glfw)
+endif()
 
 include_directories(/opt/homebrew/include)
 

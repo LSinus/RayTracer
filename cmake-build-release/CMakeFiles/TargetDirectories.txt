@@ -1,3 +1,0 @@
-/Users/leonardo/Documents/dev/RayTracer/cmake-build-release/CMakeFiles/RayTracer.dir
-/Users/leonardo/Documents/dev/RayTracer/cmake-build-release/CMakeFiles/edit_cache.dir
-/Users/leonardo/Documents/dev/RayTracer/cmake-build-release/CMakeFiles/rebuild_cache.dir
