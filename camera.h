@@ -15,8 +15,8 @@ class camera {
 public:
     double aspect_ratio = 1.0;     // Ratio of image width over height
     int    image_width  = 100;     // Rendered image width in pixel count
-    int    samples_per_pixel = 10; // Count of random samples for each pixel
-    int    max_depth = 10;         // Maximum number of reflections
+    int    samples_per_pixel = 5; // Count of random samples for each pixel
+    int    max_depth = 2;         // Maximum number of reflections
 
     void render(const hittable& world, std::vector<uint32_t>& pixels) {
         initialize();

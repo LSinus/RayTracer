@@ -9,6 +9,8 @@
 #include <limits>
 #include <memory>
 #include <random>
+#include <chrono>
+#include <functional>
 
 
 // ----------- CONSTANTS ------------- //
@@ -30,6 +32,19 @@ inline double random_double() {
 inline double random_double(double min, double max) {
     return min + (max - min) * random_double();
 }
+
+template <typename Func, typename... Args>
+double time_function(Func func, Args&&... args) {
+
+
+    auto start = std::chrono::high_resolution_clock::now();
+    func(std::forward<Args>(args)...);
+    auto end = std::chrono::high_resolution_clock::now();
+
+    return std::chrono::duration<double, std::milli>(end - start).count();
+
+}
+
 
 #include "color.h"
 #include "interval.h"
